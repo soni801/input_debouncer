@@ -58,6 +58,7 @@ fn callback(event: Event) {
         EventType::ButtonPress(button) => {
             if button == Button::Unknown(1) && should_execute() {
                 send(&EventType::KeyPress(Key::F12));
+                send(&EventType::KeyRelease(Key::F12));
             }
         }
         _ => {}
